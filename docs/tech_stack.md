@@ -1,6 +1,6 @@
-# Technical Stack: Sigmet SkyPath
+# Technical Stack: SkyPath Sentinel
 
-Sigmet SkyPath is built on a serverless, type-safe architecture designed for scalability, low latency, and maintainability.
+SkyPath Sentinel is built on a serverless, type-safe architecture designed for scalability, low latency, and maintainability.
 
 ## Core Technologies
 

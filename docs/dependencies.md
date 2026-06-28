@@ -1,6 +1,6 @@
-# Dependencies & Libraries: Sigmet SkyPath
+# Dependencies & Libraries: SkyPath Sentinel
 
-This document outlines the core libraries and dependencies chosen for the Sigmet SkyPath project, along with the justification for each choice.
+This document outlines the core libraries and dependencies chosen for the SkyPath Sentinel project, along with the justification for each choice.
 
 ## Core Dependencies
 

@@ -1,8 +1,11 @@
-# Welcome to your CDK TypeScript project
+# SkyPath Sentinel MCP
 
-This is a blank project for CDK development with TypeScript.
+SkyPath Sentinel is a deterministic aviation intelligence and mission planning engine built as a Model Context Protocol (MCP) server.
 
-The `cdk.json` file tells the CDK Toolkit how to execute your app.
+## Project Documentation
+- [Business Plan](docs/business_plan.md)
+- [Technical Stack](docs/tech_stack.md)
+- [Dependencies](docs/dependencies.md)
 
 ## Useful commands
 

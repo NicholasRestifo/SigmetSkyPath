@@ -1,10 +1,10 @@
-# Sigmet SkyPath: Deterministic Geospatial Weather Engine
+# SkyPath Sentinel: Deterministic Geospatial Weather Engine
 
 ## 1. Executive Summary
-Sigmet SkyPath is an open-source MCP server that provides deterministic geospatial weather analysis for AI agents. It bridges the gap between raw aviation meteorology and operational flight logistics, delivering hallucination-free safety verdicts by offloading complex geospatial math from LLMs to a local, deterministic engine.
+SkyPath Sentinel is an open-source MCP server that provides deterministic geospatial weather analysis for AI agents. It bridges the gap between raw aviation meteorology and operational flight logistics, delivering hallucination-free safety verdicts by offloading complex geospatial math from LLMs to a local, deterministic engine.
 
 ## 2. Value Proposition & Technical Challenges
-Sigmet SkyPath solves the limitations of LLMs in safety-critical environments:
+SkyPath Sentinel solves the limitations of LLMs in safety-critical environments:
 * **Deterministic Safety Layer:** Offloads complex geospatial math to a local, type-safe engine, eliminating LLM hallucinations. Tools are designed to return diagnostic verdicts rather than raw data, forcing agents to rely on pre-calculated safety conclusions.
 * **Efficient Data Pipeline:** Aggregates and normalizes disparate, high-volume aviation feeds (AWC) into concise, queryable JSON, significantly reducing LLM input size and lowering token costs.
 * **Operational Contextualization:** Automates the retrieval of relevant NOTAMs, ensuring agents have the necessary regulatory context to make informed decisions without navigating complex, disparate databases.
@@ -24,7 +24,7 @@ Sigmet SkyPath solves the limitations of LLMs in safety-critical environments:
 * **Expanded Integration:** Plugins for broader AI agent frameworks.
 
 ## 6. Disclaimer & Liability
-**Sigmet SkyPath is provided for educational, research, and informational purposes only.**
+**SkyPath Sentinel is provided for educational, research, and informational purposes only.**
 * **Not for Operational Use:** This tool is not intended for real-world flight planning, dispatching, or any safety-critical aviation decision-making.
 * **No Warranty:** Provided "as is," without warranty of any kind.
 * **User Responsibility:** Users are solely responsible for verifying the accuracy of generated information and ensuring compliance with aviation regulations.
