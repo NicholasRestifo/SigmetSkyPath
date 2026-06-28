@@ -13,6 +13,5 @@ cdk.out
 *.swp
 *.swo
 
-# Project Data & Roadmap
+# Project Data
 data/
-docs/roadmap/
