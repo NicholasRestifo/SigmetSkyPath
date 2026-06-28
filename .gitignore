@@ -12,3 +12,7 @@ cdk.out
 .vscode
 *.swp
 *.swo
+
+# Project Data & Roadmap
+data/
+docs/roadmap/
