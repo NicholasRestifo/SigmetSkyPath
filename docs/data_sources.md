@@ -25,6 +25,7 @@ This document outlines key aviation data sources categorized by type, along with
 | Source | Region | Data Format | Key Fields | Pros/Cons |
 | :--- | :--- | :--- | :--- | :--- |
 | **FAA NOTAM Search** | US | Web, proprietary | NOTAM number, text, start/end times | **Pros:** Official. **Cons:** Web UI is primary; API access is highly restricted/requires partnership. |
+| **NOAA AWC** | US | JSON, XML | SIGMETs, AIRMETs, Convective SIGMETs | **Pros:** Excellent API, free, reliable. **Cons:** Requires mapping to GeoJSON polygons. |
 | **Eurocontrol** | Europe | AIXM (XML) | NOTAM text, validity, geometry (polygon) | **Pros:** Rich data (AIXM). **Cons:** AIXM is extremely complex to parse. |
 | **ICAO** | Global | Standardized NOTAM | Raw text, location | **Pros:** Global standard. **Cons:** Extremely fragmented implementation. |
 | **FAA Special Use Airspace (SUA)** | US | KML, Shapefile, GeoJSON | Airspace type, boundaries (polygons), altitude limits | **Pros:** Provides GIS-ready data. **Cons:** Must manually download files; not always real-time API-driven. |
