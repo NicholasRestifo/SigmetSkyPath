@@ -14,6 +14,19 @@ This document defines the internal, canonical data structures for SkyPath Sentin
     *   `Feature<TProperties>`: Base interface for descriptive data.
     *   `SpatialFeature<TProperties, TGeometry>`: Extends `Feature` for data with required geometry.
 
+### 1.1 Geometry Types
+To ensure strict GeoJSON compliance and compatibility with geospatial libraries (e.g., `@turf/turf`), we use the standard `GeoJSON` types from `@types/geojson`.
+
+```typescript
+import { Point, Polygon, LineString, Geometry } from 'geojson';
+
+export type PointGeometry = Point;
+export type PolygonGeometry = Polygon;
+export type LineStringGeometry = LineString;
+
+export type GeoJSONGeometry = Geometry;
+```
+
 ---
 
 ## 2. Canonical Models
@@ -28,7 +41,7 @@ export interface AirportProperties {
   name: string;
   countryCode: string;   // ISO 3166-1 alpha-2
 }
-export type AirportFeature = SpatialFeature<AirportProperties, { type: 'Point', coordinates: [number, number] }>;
+export type AirportFeature = SpatialFeature<AirportProperties, PointGeometry>;
 ```
 
 ### 2.2 Weather
@@ -52,7 +65,7 @@ export interface HazardProperties {
   type: 'WEATHER' | 'AIRSPACE' | 'NOTAM' | 'TERRAIN';
   severity: 'LOW' | 'MEDIUM' | 'HIGH' | 'CRITICAL';
 }
-export type HazardFeature = SpatialFeature<HazardProperties, { type: 'Polygon', coordinates: [number, number][][] }>;
+export type HazardFeature = SpatialFeature<HazardProperties, PolygonGeometry>;
 ```
 
 ---
@@ -68,10 +81,38 @@ classDiagram
         +TProperties properties
     }
     class SpatialFeature {
-        +TGeometry geometry
+        +GeoJSONGeometry geometry
     }
-    Feature <|-- SpatialFeature
     
+    class AirportProperties {
+        +string identifier
+        +string idType
+        +string name
+        +string countryCode
+    }
+    class AirportFeature {
+        +AirportProperties properties
+    }
+    
+    class WeatherProperties {
+        +string locationIdentifier
+        +string timestamp
+        +string conditions
+        +string raw
+    }
+    class WeatherFeature {
+        +WeatherProperties properties
+    }
+    
+    class HazardProperties {
+        +string type
+        +string severity
+    }
+    class HazardFeature {
+        +HazardProperties properties
+    }
+
+    Feature <|-- SpatialFeature
     SpatialFeature <|-- AirportFeature
     SpatialFeature <|-- HazardFeature
     Feature <|-- WeatherFeature
