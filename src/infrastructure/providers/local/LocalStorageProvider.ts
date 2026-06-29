@@ -1,12 +1,13 @@
 import { IStorageProvider } from '../../interfaces/IStorageProvider';
 import { Result, success } from '../../../types/result';
+import { PATHS } from '../../../constants/paths';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 
 export class LocalStorageProvider implements IStorageProvider {
   private baseDir: string;
 
-  constructor(baseDir: string = './data') {
+  constructor(baseDir: string = PATHS.DATA) {
     this.baseDir = baseDir;
   }
 
