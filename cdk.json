@@ -1,5 +1,5 @@
 {
-  "app": "npx ts-node --prefer-ts-exts bin/sigmet_sky_path.ts",
+  "app": "npx ts-node --prefer-ts-exts bin/sky_path_sentinel.ts",
   "watch": {
     "include": [
       "**"

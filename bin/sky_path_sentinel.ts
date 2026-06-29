@@ -1,9 +1,9 @@
 #!/opt/homebrew/opt/node/bin/node
 import * as cdk from 'aws-cdk-lib/core';
-import { SigmetSkyPathStack } from '../lib/sigmet_sky_path-stack';
+import { SkyPathSentinelStack } from '../lib/sky_path_sentinel-stack';
 
 const app = new cdk.App();
-new SigmetSkyPathStack(app, 'SigmetSkyPathStack', {
+new SkyPathSentinelStack(app, 'SkyPathSentinelStack', {
   /* If you don't specify 'env', this stack will be environment-agnostic.
    * Account/Region-dependent features and context lookups will not work,
    * but a single synthesized template can be deployed anywhere. */

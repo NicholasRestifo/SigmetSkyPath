@@ -15,11 +15,14 @@
 *   **Configuration:** Use `dotenv` for local environment variable loading.
 *   **Operational Safety:** Rely on staging/deployment environments for safety; ensure `IDataPopulator` provides robust logging.
 
-## 3. Core Interface Definitions (src/infrastructure/interfaces/)
+## 3. Core Interface & Type Definitions (src/infrastructure/interfaces/)
 *   `IStorageProvider`: Abstracts persistent storage (File vs S3).
 *   `ICacheProvider`: Abstracts caching layer (Local vs DynamoDB).
-*   `IDataFetcher`: Abstracts data acquisition.
 *   `IDataPopulator`: Abstracts bulk data import into storage.
+*   **Refined `IDataFetcher` Architecture:**
+    *   `IDataFetcher<TQuery, TResult>`: Base generic interface for all data acquisition.
+    *   **Specific Interfaces:** `IAirportFetcher`, `IWeatherFetcher`, `IHazardFetcher`, each extending the base generic interface with concrete types.
+    *   **Stubbed Types:** `Airport`, `Weather`, `Hazard` (Stubbed for now; to be refined as API data structures are finalized).
 
 ## 4. Local Development Data Management
 *   **Automated Admin Tools:** CLI scripts to populate persistent/durable local storage with static datasets.

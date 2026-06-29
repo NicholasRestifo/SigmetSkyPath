@@ -1,5 +1,5 @@
 {
-  "name": "sigmet_sky_path",
+  "name": "sky_path_sentinel",
   "version": "0.1.0",
   "scripts": {
     "build": "tsc",

@@ -1,5 +1,5 @@
 import { Result } from '../../types/result';
 
-export interface IDataFetcher {
-  fetch(query: string): Promise<Result<unknown>>;
+export interface IDataFetcher<TQuery, TResult> {
+  fetch(query: TQuery): Promise<Result<TResult>>;
 }
