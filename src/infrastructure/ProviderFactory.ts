@@ -1,10 +1,10 @@
 import { ENV, DATA_MODE } from '../constants';
-import { IStorageProvider } from './interfaces/IStorageProvider';
+import { StorageProvider } from './interfaces/StorageProvider';
 import { ICacheProvider } from './interfaces/ICacheProvider';
-import { IAirportFetcher } from './interfaces/IAirportFetcher';
-import { IWeatherFetcher } from './interfaces/IWeatherFetcher';
-import { IHazardFetcher } from './interfaces/IHazardFetcher';
-import { IDataPopulator } from './interfaces/IDataPopulator';
+import { AirportFetcher } from './interfaces/AirportFetcher';
+import { WeatherFetcher } from './interfaces/WeatherFetcher';
+import { HazardFetcher } from './interfaces/HazardFetcher';
+import { DataPopulator } from './interfaces/DataPopulator';
 import { LocalStorageProvider } from './providers/local/LocalStorageProvider';
 import { LocalCacheProvider } from './providers/local/LocalCacheProvider';
 import { LiveApiFetcher } from './providers/local/LiveApiFetcher';
@@ -17,7 +17,7 @@ import { DeployedDataPopulator } from './providers/deployed/DeployedDataPopulato
 import { AirportQuery, Airport, WeatherQuery, Weather, HazardQuery, Hazard } from '../types/data';
 
 export class ProviderFactory {
-  static getStorageProvider(): IStorageProvider {
+  static getStorageProvider(): StorageProvider {
     if (process.env.APP_ENV === ENV.PROD) {
       return new DeployedStorageProvider();
     }
@@ -31,7 +31,7 @@ export class ProviderFactory {
     return new LocalCacheProvider();
   }
 
-  static getAirportFetcher(): IAirportFetcher {
+  static getAirportFetcher(): AirportFetcher {
     if (process.env.APP_ENV === ENV.PROD) {
       return new DeployedDataFetcher<AirportQuery, Airport>();
     }
@@ -41,7 +41,7 @@ export class ProviderFactory {
     return new LiveApiFetcher<AirportQuery, Airport>();
   }
 
-  static getWeatherFetcher(): IWeatherFetcher {
+  static getWeatherFetcher(): WeatherFetcher {
     if (process.env.APP_ENV === ENV.PROD) {
       return new DeployedDataFetcher<WeatherQuery, Weather>();
     }
@@ -51,7 +51,7 @@ export class ProviderFactory {
     return new LiveApiFetcher<WeatherQuery, Weather>();
   }
 
-  static getHazardFetcher(): IHazardFetcher {
+  static getHazardFetcher(): HazardFetcher {
     if (process.env.APP_ENV === ENV.PROD) {
       return new DeployedDataFetcher<HazardQuery, Hazard>();
     }
@@ -61,7 +61,7 @@ export class ProviderFactory {
     return new LiveApiFetcher<HazardQuery, Hazard>();
   }
 
-  static getDataPopulator(): IDataPopulator {
+  static getDataPopulator(): DataPopulator {
     if (process.env.APP_ENV === ENV.PROD) {
       return new DeployedDataPopulator();
     }

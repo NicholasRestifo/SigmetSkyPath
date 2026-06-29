@@ -125,16 +125,16 @@ graph TD
     Ingestion --> Validation[Zod Validation]
     Validation --> Normalization[Normalization Mapping]
     Normalization --> Canonical[Canonical Model]
-    Canonical --> Storage[IStorageProvider]
+    Canonical --> Storage[StorageProvider]
 ```
 
 ---
 
 ## 4. Mapping Strategy
 
-The ingestion layer (`IDataPopulator` and `IDataFetcher` implementations) is responsible for the transformation logic:
+The ingestion layer (`DataPopulator` and `DataFetcher` implementations) is responsible for the transformation logic:
 
 1.  **Fetch:** Retrieve raw data from the external source.
 2.  **Validate:** Use `Zod` schemas to ensure the raw data meets minimum requirements.
 3.  **Normalize:** Map external fields to the canonical model fields.
-4.  **Store:** Save the normalized model (and optionally the raw data) to the `IStorageProvider`.
+4.  **Store:** Save the normalized model (and optionally the raw data) to the `StorageProvider`.

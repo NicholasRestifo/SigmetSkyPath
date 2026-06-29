@@ -1,8 +1,8 @@
-import { IDataFetcher } from '../../interfaces/IDataFetcher';
+import { DataFetcher } from '../../interfaces/DataFetcher';
 import { Result, success, failure } from '../../../types/result';
 import axios from 'axios';
 
-export class LiveApiFetcher<TQuery, TResult> implements IDataFetcher<TQuery, TResult> {
+export class LiveApiFetcher<TQuery, TResult> implements DataFetcher<TQuery, TResult> {
   async fetch(query: TQuery): Promise<Result<TResult>> {
     try {
       // In a real implementation, we'd use the query object to build the URL

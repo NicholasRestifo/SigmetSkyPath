@@ -1,10 +1,10 @@
-import { IStorageProvider } from '../../interfaces/IStorageProvider';
+import { StorageProvider } from '../../interfaces/StorageProvider';
 import { Result, success } from '../../../types/result';
 import { PATHS } from '../../../constants/paths';
 import * as fs from 'fs/promises';
 import * as path from 'path';
 
-export class LocalStorageProvider implements IStorageProvider {
+export class LocalStorageProvider implements StorageProvider {
   private baseDir: string;
 
   constructor(baseDir: string = PATHS.DATA) {

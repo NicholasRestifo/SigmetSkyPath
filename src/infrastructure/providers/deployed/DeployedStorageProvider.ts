@@ -1,8 +1,8 @@
-import { IStorageProvider } from '../../interfaces/IStorageProvider';
+import { StorageProvider } from '../../interfaces/StorageProvider';
 import { Result, failure } from '../../../types/result';
 import { NotImplementedError } from '../../../errors/NotImplementedError';
 
-export class DeployedStorageProvider implements IStorageProvider {
+export class DeployedStorageProvider implements StorageProvider {
   async save(key: string, data: string): Promise<Result<void>> {
     return failure(new NotImplementedError());
   }
